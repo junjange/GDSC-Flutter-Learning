@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagrem_clon/login_page.dart';
 import 'package:instagrem_clon/root_page.dart';
 
 void main() {
@@ -31,12 +32,16 @@ class MyCard extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => RootPage()));
               print("shopping button is clicked");
             },
           ),
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => LoginPage()));
               print("serach button is clicked");
             },
           ),
@@ -207,8 +212,6 @@ class MyCard extends StatelessWidget {
 }
 
 class MySnackBar extends StatefulWidget {
-  const MySnackBar({Key? key}) : super(key: key);
-
   @override
   _MySnackBarState createState() => _MySnackBarState();
 }
@@ -230,6 +233,27 @@ class _MySnackBarState extends State<MySnackBar> {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Hi"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("Go to the Home page"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
     );
   }
