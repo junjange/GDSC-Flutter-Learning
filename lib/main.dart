@@ -7,11 +7,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  
+  // MaterialApp = 앱으로서 기능을 할 수 있도록 도와주는 뼈대
+  // scaffold = 구성된 앱에서 디자인적인 부분을 도와주는 뼈대
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // 타이틀 바 우측 띠 제거
       title: '김우탄',
       home: MyCard(),
     );
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
 class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: Colors.green[800],
       appBar: AppBar(
         title: Text("노원구 녹차밭"),
